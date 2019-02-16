@@ -1,0 +1,10 @@
+.idea
+*/test
+
+
+# 忽略子路径下的node_modules目录文件
+/node_modules
+/*/node_modules
+/*/*/node_modules
+
+*.log
