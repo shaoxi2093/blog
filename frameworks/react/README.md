@@ -184,13 +184,19 @@ componentDidCatch(error, errorInfo), 组件的捕错钩子，防止页面报错�
 
 
 
-## react展开和扩展
+## react展开
+### 展开
 1. virtual dom
 2. jsx
 3. 组件化
 4. 生命周期
 5. diff算法
 6. re-render
-7. redux
-8. immutable
-9. fiber
+7. 事件监听
+
+
+### 扩展
+1. redux
+2. react-router
+3. immutable
+4. fiber
