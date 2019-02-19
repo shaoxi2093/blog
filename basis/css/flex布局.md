@@ -30,3 +30,5 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;  //允�
 ```
 
 
+----
+参考文章：《[flex布局-阮一峰](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)》
