@@ -20,10 +20,11 @@ pm2的作用，主要有以下几点：
 4. God进行应用重启  
 
 ---
-对于pm2的两种模式fork和cluster，参考[这里](https://stackoverflow.com/questions/34682035/cluster-and-fork-mode-difference-in-pm2)的解释，区别：  
-只是采用了不同的方式来实现god模块内部启动和重启的方式，并没有其他不同。==这里我理解的也不太清除，仅供参考==  
-- fork模式支持php、python等等，使用的是nodejs中的`child_process`模块，进行多进程   
-- cluster模式只支持node，采用的是nodejs的`cluster`构建master进程和其他工作进程集群，master和工作进程之间支持的IPC通信（工作进程由child_process.fork()方法创建，因此它们可以使用IPC和父进程通信，从而使各进程交替处理连接服务。），==公用一个端口==，开启多个实例
+对于pm2的两种模式fork和cluster，，区别：==这里我理解的也不太清除，仅供参考==  
+- fork模式支持php、python等等，只会生成单个实例，由应用内部实现多进程   
+- cluster模式只支持node，采用的是nodejs的`cluster`构建master进程和其他工作进程集群，master和工作进程之间支持的IPC通信（工作进程由child_process.fork()方法创建，因此它们可以使用IPC和父进程通信，从而使各进程交替处理连接服务。），==公用一个端口==，开启多个实例  
+
+其他的解释，还有[这里](https://stackoverflow.com/questions/34682035/cluster-and-fork-mode-difference-in-pm2)的解释:
 ![区别](https://github.com/shaoxi2093/blogImgs/blob/master/github/pm2-fork-cluster.png?raw=true)
 
 > cluster公用一个端口，其实并不完全是，如下：  
