@@ -24,12 +24,14 @@ pm2的作用，主要有以下几点：
 - fork模式支持php、python等等，只会生成单个实例，由应用内部实现多进程   
 - cluster模式只支持node，采用的是nodejs的`cluster`构建master进程和其他工作进程集群，master和工作进程之间支持的IPC通信（工作进程由child_process.fork()方法创建，因此它们可以使用IPC和父进程通信，从而使各进程交替处理连接服务。），==公用一个端口==，开启多个实例  
 
+> The cluster mode allows networked Node.js applications (http(s)/tcp/udp server) to be scaled accross all CPUs available, without any code modifications. This greatly increases the performance and reliability of your applications, depending on the number of CPUs available. Under the hood, this uses the Node.js cluster module such that the scaled application’s child processes can automatically share server ports.  --pm2官网文档
+
 其他的解释，还有[这里](https://stackoverflow.com/questions/34682035/cluster-and-fork-mode-difference-in-pm2)的解释:
 ![区别](https://github.com/shaoxi2093/blogImgs/blob/master/github/pm2-fork-cluster.png?raw=true)
 
 > cluster公用一个端口，其实并不完全是，如下：  
 cluster模块支持两种连接分发模式（将新连接安排给某一工作进程处理）。  
-第一种方法（也是除Windows外所有平台的默认方法），是循环法。由主进程负责监听端口，接收新连接后再将连接循环分发给工作进程。在分发中使用了一些内置技巧防止工作进程任务过载。  
+第一种方法（也是除Windows外所有平台的默认方法），是循环法[round-robin](https://en.wikipedia.org/wiki/Round-robin_scheduling)。由主进程负责监听端口，接收新连接后再将连接循环分发给工作进程。在分发中使用了一些内置技巧防止工作进程任务过载。  
 第二种方法是，主进程创建监听socket后发送给感兴趣的工作进程，由工作进程负责直接接收连接。
 
 
