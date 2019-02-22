@@ -32,8 +32,8 @@ header压缩，如上文中所言，对前面提到过HTTP1.x的header带有大�
 
 服务端推送（server push），同SPDY一样，HTTP2.0也具有server push功能。
 
-
 ### https
+
 首先，https并不是http版本的一种，是基于http和ssl/tsl的加密封装版本。它并不关心http是哪个版本的，本身并不是依赖关系，只关心传输过程中加密和认证过程。不过部分浏览器的支持特性，有些http2.0必须在https下。
 
 HTTPS协议需要到CA申请证书，一般免费证书很少，需要交费。
