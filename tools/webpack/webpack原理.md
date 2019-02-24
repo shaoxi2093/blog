@@ -207,6 +207,18 @@ module.exports = {
 
 webpack4中已经内置了`UglifyJs`插件，当打包模式参数mode设置为`production`时就会自动开启。
 
+## 原理
+
+### 模块化
+
+webpack就是一个模块化打包工具，模块化是重点。首先webpack基于node，因此最开始支持的模块化是commonjs格式的，后来版本又支持了AMD（requirejs浏览器），和ES6 module。
+
+### loader
+loader 用于对模块的源代码进行转换。loader 可以使你在 import 或"加载"模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！  --webpack官网
+### plugin
+
+### others
+
 最后放一张大图，镇楼。。
 ![webpack 流程](https://github.com/shaoxi2093/blogImgs/blob/master/github/TB-webpack.jpg?raw=true)
 
@@ -216,4 +228,5 @@ webpack4中已经内置了`UglifyJs`插件，当打包模式参数mode设置为`
 ---
 参考文章：  
 强烈推荐《[webpack4.0各个击破 系列文章](https://www.cnblogs.com/dashnowords/category/1284284.html)》  
-《[细说 webpack 之流程篇](http://taobaofed.org/blog/2016/09/09/webpack-flow/)》
+《[细说 webpack 之流程篇](http://taobaofed.org/blog/2016/09/09/webpack-flow/)》  
+[webpack官方文档](https://www.webpackjs.com/api/)
