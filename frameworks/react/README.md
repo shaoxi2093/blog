@@ -141,11 +141,17 @@ React 只会简单的考虑同层级节点的位置变换，而对于不同层�
 
 ### v16.x
 v16已经出来有一年多了，最主要的更新内容我觉得就是Concurrent Render了。  
+
 1. Concurrent Render  
-- Time Slicing(Fiber)   
+    - Time Slicing(Fiber)  
 将整个渲染过程分为两个阶段：render/reconciliation（包括到componentWillUpdate之前的所有生命周期）和commit，前一个可中断，后一个不可中断  
 时间切片主要对第一阶段进行优化。通过浏览器接口requestIdelCallback利用空闲时间进行。
-```
+    - Suspense  
+字面意思悬起，暂停当前组件的渲染, 当完成某件事以后再继续渲染。  
+主要是对一些IO过程的时间优化。
+
+```js
+// fiber
 Fiber = {
       tag: TypeOfWork, // fiber的类型，参考最后的tag类型
       alternate: Fiber|null, // 在fiber更新时克隆出的镜像fiber，对fiber的修改会标记在这个fiber上,相当于workInProgress
@@ -155,12 +161,8 @@ Fiber = {
   }
 ```
 
-
-
-- Suspense
-字面意思悬起，暂停当前组件的渲染, 当完成某件事以后再继续渲染。  
-主要是对一些IO过程的时间优化。
-```
+```js
+// suspense demo
 import React, { lazy, Suspense } from 'react'
 const OtherComponent = lazy(() => import('./OtherComponent'))
 
@@ -175,12 +177,25 @@ function MyComponent() {
 
 2. render 新增的返回类型，如数组
 3. 新的生命周期（16.3） 
-- `getDerivedStateFromProps(nextProps, prevState)`: 更加语义化, 用来替代 componentWillMount() 和 componentWillReceiveProps(nextProps);
+    - `getDerivedStateFromProps(nextProps, prevState)`: 更加语义化, 用来替代 componentWillMount() 和 componentWillReceiveProps(nextProps);
 
-- `getSnapshotBeforeUpdate(prevProps, prevState)`: 可以将该钩子返回的结果传入 componentDidUpdate 的第三个参数中, 从而达到 dom 数据统一。用来替代 componentWillUpdate();
+    - `getSnapshotBeforeUpdate(prevProps, prevState)`: 可以将该钩子返回的结果传入 componentDidUpdate 的第三个参数中, 从而达到 dom 数据统一。用来替代 componentWillUpdate();
 4. componentDidCatch  
 componentDidCatch(error, errorInfo), 组件的捕错钩子，防止页面报错崩溃
-5. 其他。。
+5. hooks  
+
+#### hooks
+
+hooks为什么会出现，就要说到目前react使用上的几个问题，Reusing logic、Giant Components、Confusing Classes，也是几个痛点：
+
+1. 高阶组件使用和context的使用，导致的无限嵌套Wrapper hell
+2. 生命周期中componentDidMount、componentWillReceiveProps做的同样的数据获取操作，以及前后添加监听和销毁监听
+3. 无状态组件和Class component的使用问题
+
+对于Reusing logic，通常采用的有两种方法：  
+
+- Higher-order components
+- Render props  
 
 
 
