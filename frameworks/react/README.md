@@ -210,8 +210,10 @@ hooks为什么会出现，就要说到目前react使用上的几个问题，Reus
 7. 事件监听
 
 
-### 扩展
+### 扩展  
+
 1. redux
 2. react-router
-3. immutable
-4. fiber
+3. redux-thunk/redux-saga
+4. immutable
+5. fiber
