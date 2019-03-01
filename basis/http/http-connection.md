@@ -8,6 +8,11 @@ HTTP首部定义Connection: keep-alive后，客户端、服务端怎么知道本
 静态页面通过Content-Length提前告知对方数据传输大小，具体可以参考拙作HTTP Content-Length深入实践。
 动态页面不能通过Content-Length提前告知对方数据传输大小，它是分块传输（chunked），这时候就要根据chunked编码来判断，chunked编码的数据在最后有一个空chunked块，表明本次传输数据结束，HTTP头部使用Transfer-Encoding: chunked来代替Content-Length。
 
+tcp/ip：  
+长连接：一个tcp/ip连接上可以连续发送多个数据包，在tcp连接保持期间，如果没有数据包发送，**需要双方发检测包以维持此连接，一般需要自己做在线维持（类似于心跳包）**  
+短连接：通信双方有数据交互时，就建立一个tcp连接，数据发送完成后，则断开此tcp连接
+
+
 ## Http keep-alive仍然存在的问题
 
 在HTTP1.1中是默认开启了Keep-Alive，它解决了多次连接的问题，但是依然有两个效率上的问题：
