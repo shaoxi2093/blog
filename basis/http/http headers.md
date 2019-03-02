@@ -85,6 +85,9 @@ HTTP消息头是在，客户端请求（Request）或服务器响应（Response�
 | Transfer-Encoding | 文件传输编码                                                                        | Transfer-Encoding:chunked                           |
 | Vary              | 告诉下游代理是使用缓存响应还是从原始服务器请求                                      | Vary: *                                             |
 | Via               | 告知代理客户端响应是通过哪里发送的                                                  | Via: 1.0 fred, 1.1 nowhere.com (Apache/1.1)         |
+| Access-Control-Allow-Headers | 服务器端允许的请求Headers |Access-Control-Allow-Headers:Content-Type,Accept |
+| Access-Control-Allow-Methods | 服务器端允许的请求方法 |Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS|
+| Access-Control-Allow-Origin | 服务器端允许的请求Origin头部（譬如为*）|   Access-Control-Allow-Origin: * |
 
 个人并没有配置或者修改到以上部分，只是接触过，这部分中：  
 1. `content-x`的headers都是用来帮助接收方（浏览器等）去解析返回数据使用
