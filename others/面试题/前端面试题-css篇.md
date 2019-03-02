@@ -13,7 +13,8 @@
 ---
 延伸问题如下：  
 
-### `position:absolute`后`z-index`的例子，如下，问题C、D谁会覆盖谁？
+### `position:absolute`是怎么计算位置的，如果是在行内元素包裹下会怎样？（包含块）
+### `position:absolute`后`z-index`的例子，如下，问题B、D谁会覆盖谁？（层叠上下文）
 
 ```html
 <style>
@@ -39,6 +40,14 @@
   <div style="position: absolute;z-index: 101;" class="D"></div>
 </div>
 ```
+
+解析：  
+根据层叠上下文的几个计算规则：  
+1. 当`z-index`不为`auto`时，会创建层叠上下文，优先从最高层（顶层`z-index`不为`auto`的父元素）相比较
+2. 当`z-index`相等时，后出现的在先出现的上面
+3. 当`z-index`不等时，谁大谁在上面  
+
+因此，BCD创建了层叠上下文，通过1知道，需要BC相比较，所以B会盖住D。
 
 ## display的取值和具体含义
 
