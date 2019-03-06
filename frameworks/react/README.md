@@ -208,6 +208,7 @@ hooks为什么会出现，就要说到目前react使用上的几个问题，Reus
 5. diff算法
 6. re-render
 7. 事件监听
+8. render props和hoc
 
 
 ### 扩展  
