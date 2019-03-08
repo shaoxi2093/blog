@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-12-16 23:12:16
+title: BFC特性    
+tags:  
+  - web
+  - 浏览器
+  - css
+  - 前端
+---
 # BFC特性
 
 BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”。BFC元素特性表现原则就是： 内部无论怎么样，都不会超出他的BFC，影响BFC外的元素。  

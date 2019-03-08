@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-10 12:59:48
+title: Http SSL/TLS验证过程   
+tags:  
+  - web
+  - 浏览器
+  - http
+  - https
+---
 # Https SSL/TLS验证过程
 
 验证过程：  

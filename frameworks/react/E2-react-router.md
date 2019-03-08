@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-10-23 21:40:17
+title: react-router 
+tags:  
+  - web
+  - react
+  - javascript
+  - 前端
+---
 # react-router
 react 本身只是处理UI的框架，并不关心location。因此需要一个处理location和components之间关系的存在。  
 

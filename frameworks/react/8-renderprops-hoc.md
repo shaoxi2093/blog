@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-10-28 12:10:48
+title: Render Props 和 HOC 
+tags:  
+  - web
+  - react
+  - javascript
+  - 前端
+---
 # Render Props 和 HOC
 
 先说下这两个是干什么的：  

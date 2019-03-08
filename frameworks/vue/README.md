@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-08-17 08:27:15
+title: vue 
+tags:  
+  - web
+  - vue
+  - javascript
+  - 前端
+---
 # vue
 
 ## 双向绑定

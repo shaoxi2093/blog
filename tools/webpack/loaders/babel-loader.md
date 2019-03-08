@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-12-19 15:32:56
+title: babel-loader   
+tags:  
+  - web
+  - webpack
+  - loaders
+  - javascript
+  - 前端
+---
 # babel-loader
 
 babel主要用于将js文件中的ES6语法转ES5。步骤就是：  

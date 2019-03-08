@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-04 16:59:55
+title: cluster   
+tags:  
+  - web
+  - node
+  - linux
+  - 前端
+---
 # Linux常用命令
 随笔。  
 这里只记录Linux常用命令，和一些node服务器牵扯到的一些功能和使用方法记录，并不是操作系统原理。23333～  
@@ -57,4 +67,12 @@ grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
 
 ### vi
 如`vi`、`vim`等
+
+### netstat
+
+### touch
+
+### ps -ef
+
+### pwd
 

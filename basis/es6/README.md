@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-07-22 17:49:27
+title: ES6    
+tags:  
+  - web
+  - es6
+  - javascript
+  - 前端
+---
+
 # ES6
 ES6相关内容，基本都是通过阮老师的《[ECMAScript 6 入门](http://es6.ruanyifeng.com/)》来学习的。    
 之后会按照以下段落分开总结自己的理解。

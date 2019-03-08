@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-10-06 21:26:17
+title: js数据类型与内置对象   
+tags:  
+  - web
+  - js object
+  - javascript
+  - 前端
+---
 # js数据类型与内置对象
 
 ## js数据类型

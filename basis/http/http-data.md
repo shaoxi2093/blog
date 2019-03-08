@@ -1,3 +1,12 @@
+---
+author: 勺夕
+date: 2019-01-31 03:52:45
+title: Http data   
+tags:  
+  - web
+  - 浏览器
+  - http
+---
 # Http data
 
 这里的data想说的是http的请求内容实体。

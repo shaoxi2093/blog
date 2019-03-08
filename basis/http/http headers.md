@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-07-19 13:09:24
+title: Http headers   
+tags:  
+  - web
+  - 浏览器
+  - http
+---
+
 # Http headers
 
 HTTP消息头是在，客户端请求（Request）或服务器响应（Response）时传递的，位请求或响应的第一行，HTTP消息体（请求或响应的内容）是其后传输。HTTP消息头，以明文的字符串格式传送，是以冒号分隔的键/值对，如：Accept-Charset: utf-8，每一个消息头最后以回车符(CR)和换行符(LF)结尾。HTTP消息头结束后，会用一个空白的字段来标识，这样就会出现两个连续的CR-LF。

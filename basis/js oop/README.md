@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-05-23 09:35:04
+title: Javascript面向对象   
+tags:  
+  - web
+  - 浏览器
+  - javascript
+  - 前端
+---
 # Javascript面向对象
 
 ## 类的声明

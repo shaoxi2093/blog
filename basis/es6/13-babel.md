@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-09-28 11:33:43
+title: babel    
+tags:  
+  - web
+  - es6
+  - javascript
+  - 前端
+---
 # babel
 由于部分浏览器不支持es6语法，无法将含有es6语法的js进行编译执行，因此出现了babel这个中折方案。babel可以将es6语法转换成es5供浏览器运行。  
 

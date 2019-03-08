@@ -1,3 +1,12 @@
+---
+author: 勺夕
+date: 2018-03-12 12:20:34
+title: js和css加载   
+tags:  
+  - web
+  - 浏览器
+---
+
 # js和css加载  
 js全阻塞，css半阻塞
 

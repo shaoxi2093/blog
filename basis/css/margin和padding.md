@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-03-18 18:55:22
+title: margin和padding    
+tags:  
+  - web
+  - 浏览器
+  - css
+  - 前端
+---
 # margin和padding
 
 `margin`和`padding`我一直以为很熟了，只要了解盒子模型就以为知道了全部，直到有一次被问到了行内元素和margin、padding一起使用，会是什么样情况时，震惊了。  

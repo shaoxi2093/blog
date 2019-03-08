@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-02-06 10:20:34
+title: cookie、session、token
+tags: 
+  - cookie
+  - 浏览器
+  - session
+  - token
+---
+
 # cookie、session、token
 
 当用户访问服务器时，服务器要知道，并需要标记你是谁的时候，引出了session概念，再之后引入了token，解决多端登陆和减少服务器存储session等问题。当用户（浏览器）希望保持自己身份，和服务器之间持续沟通时，引出了cookie。  

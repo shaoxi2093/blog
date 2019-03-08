@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-28 14:51:11
+title: Sentinel和Cluster   
+tags:  
+  - web
+  - redis
+  - javascript
+  - 前端
+---
 # Sentinel和Cluster
 
 Redis是一个单线程的，可基于内存亦可持久化的日志型、Key-Value数据库。一旦崩溃了，重启带来的数据丢失和服务不可用都是一种巨大的伤害。因此会有一些高可用（high availability）解决方案。  

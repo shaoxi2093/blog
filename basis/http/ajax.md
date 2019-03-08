@@ -1,3 +1,12 @@
+---
+author: 勺夕
+date: 2018-10-29 17:09:47
+title: ajax   
+tags:  
+  - web
+  - 浏览器
+  - ajax
+---
 # ajax
 jquery是我学习前端最早接触到的框架，最早接触ajax不是原生而是jquery。jquery一代神话，无论是其选择器系统，简洁易懂的事件绑定，dom操作，还是$.ajax、$.each、$.params、$.extend等等方法的使用，甚至大多数情况下我们都无需考虑兼容性（框架本身已经对此做的很好了），确实把我“养”的越来越“懒”。
 

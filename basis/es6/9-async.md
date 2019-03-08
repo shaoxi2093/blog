@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-06-30 11:03:41
+title: async    
+tags:  
+  - web
+  - es6
+  - javascript
+  - 前端
+---
 # async
 需要好好整理。。
 

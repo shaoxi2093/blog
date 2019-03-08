@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-23 20:31:52
+title: Nodejs   
+tags:  
+  - web
+  - node
+  - javascript
+  - 前端
+---
 # Nodejs
 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 
 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。  --来自官网  

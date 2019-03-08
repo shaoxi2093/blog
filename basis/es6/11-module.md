@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-10-28 17:33:11
+title: Module    
+tags:  
+  - web
+  - es6
+  - javascript
+  - 前端
+---
 # Module
 
 Module模块，js在之前版本一直没有官方支持的模块引入和管理方案，使得我们在最初的时间段里，通常把模块对象挂在全局对象下，供其他js使用。  

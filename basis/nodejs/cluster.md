@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-04 16:59:55
+title: cluster   
+tags:  
+  - web
+  - node
+  - javascript
+  - 前端
+---
 # cluster
 cluster（集群）主要是针对`child_process`（子进程）的一个利用和封装。实现node应用的多实例化，充分利用多核cpu。
 > 单个 Node.js 实例运行在单个线程中。 为了充分利用多核系统，有时需要启用一组 Node.js 进程去处理负载任务。

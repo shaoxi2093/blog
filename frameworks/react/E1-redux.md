@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-10-28 12:10:48
+title: redux 
+tags:  
+  - web
+  - react
+  - redux
+  - javascript
+  - 前端
+---
 # redux
 
 Redux 是 JavaScript 状态容器，提供可预测化的状态管理，因为严格的单向数据流是 Redux 架构的设计核心。它并不是专属react的，还可以通过一些中间层连接后，和其他前端框架一起使用，例如

@@ -1,3 +1,12 @@
+---
+author: 勺夕
+date: 2018-07-02 10:22:23
+title: Nginx   
+tags:  
+  - web
+  - nginx
+  - 前端
+---
 # Nginx
 Nginx我目前知道的作用有，反向代理、负载均衡功能，资源gzip压缩等等。  
 先挖个坑，今后补充详细。

@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-12-23 14:03:43
+title: webpack   
+tags:  
+  - web
+  - webpack
+  - javascript
+  - 前端
+---
 # webpack
 webpack作为现在最常用的打包工具，已经上升到了前端必备基础技能之一了，都怀疑是不是应该放到basis分类下去。  
 

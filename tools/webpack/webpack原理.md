@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-11-01 17:30:09
+title: Webpack原理   
+tags:  
+  - web
+  - webpack
+  - javascript
+  - 前端
+---
 # Webpack原理
 
 对于webpack原理，之前我理解的的确是太简单了点，简直就是管中窥豹，本着洗新革面的心态，重新正视这门技术，对其原理进行学习。  

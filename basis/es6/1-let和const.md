@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-06-14 17:23:25
+title: let和const    
+tags:  
+  - web
+  - es6
+  - javascript
+  - 前端
+---
 # let和const
 
 ## let

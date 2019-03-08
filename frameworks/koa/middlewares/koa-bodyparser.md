@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-07-08 06:41:13
+title: koa-bodyparser   
+tags:  
+  - node
+  - koa
+  - web
+  - middlewares
+---
+
 # koa-bodyparser
 
 koa-bodyparser是用来对请求数据进行解析的中间件，最终返回到`context.request`中大致流程入下。

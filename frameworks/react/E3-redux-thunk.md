@@ -1,3 +1,14 @@
+---
+author: 勺夕
+date: 2018-10-20 07:21:56
+title: React 
+tags:  
+  - web
+  - react
+  - redux
+  - javascript
+  - 前端
+---
 # redux-thunk
 
 redux中间件，用于处理异步操作（副作用），即负责封装了以下dispatch的功能，使其支持action可以为一个function。

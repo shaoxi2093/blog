@@ -1,3 +1,13 @@
+---
+author: 勺夕
+date: 2018-12-28 16:59:41
+title: webpack打包优化方案
+tags:  
+  - web
+  - webpack
+  - javascript
+  - 前端
+---
 # webpack打包优化方案
 
 1. 通过externals配置来提取常用库
