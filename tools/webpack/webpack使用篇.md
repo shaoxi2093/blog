@@ -5,6 +5,7 @@
 - [webpack使用篇](#webpack使用篇)
   - [html](#html)
   - [css](#css)
+    - [其他](#其他)
   - [assets](#assets)
   - [js](#js)
     - [代码编译](#代码编译)
@@ -104,6 +105,10 @@ module.exports = {
 
 对此，整个编译过程参考下图：  
 ![css-processing-chain](https://github.com/shaoxi2093/blogImgs/blob/master/github/webpack-css.png?raw=true)
+
+### 其他
+
+`tree shaking`去除css中没有使用到的css，利用`purify css`
 
 ## assets
 
