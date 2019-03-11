@@ -138,7 +138,8 @@ chi.father //爹
 缺点：无法识别继承自Parents.prototype的方法
 
 3. 组合继承
-```
+
+```js
 function Parents(fa,mo){
     this.father = fa
     this.mother = mo
@@ -163,7 +164,8 @@ chi.callDad()
 
 4. 寄生继承
 5. 寄生组合继承
-```
+
+```js
 function initExtends(Ch,Pa){
     Ch.prototype = Object.create(Pa.prototype) //继承方法只是复制，不执行
     Ch.prototype.constructor = Ch //让ch回归ch
