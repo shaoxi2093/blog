@@ -7,6 +7,8 @@ Redux 是 JavaScript 状态容器，提供可预测化的状态管理，因为�
 - [backbone-redux](https://github.com/redbooth/backbone-redux)
 - ...
 
+<!-- TOC -->autoauto- [redux](#redux)auto  - [redux的三大原则](#redux的三大原则)auto  - [三个组成部分](#三个组成部分)auto  - [redux数据流（工作流）原理](#redux数据流工作流原理)auto  - [Demo](#demo)auto    - [创建store](#创建store)auto    - [创建actions](#创建actions)auto    - [创建reducers && 合并reducers](#创建reducers--合并reducers)auto    - [组件中使用](#组件中使用)auto  - [redux实际项目使用](#redux实际项目使用)auto    - [react-redux](#react-redux)auto    - [redux-thunk](#redux-thunk)auto    - [redux-actions](#redux-actions)autoauto<!-- /TOC -->
+
 ## redux的三大原则  
 
 1. 单一数据源
@@ -138,6 +140,46 @@ ChildComponent.propTypes = {
   onTodoClick: PropTypes.func.isRequired
 }
 ```
+
+## redux实际项目使用
+
+### react-redux
+
+react负责管理渲染，redux负责管理数据，**react-redux**负责连接前两者。
+
+react-redux提供一个`connect`方法，使用的是HOC（高阶组件）的方式来封装我们的组件。此时，模块输出的应该是经过`connect`封装后的容器组件，如下：  
+
+```js
+class App extends React.Component {
+    //...
+}
+export default connect(state => ({
+  // 需要引入订阅的数据
+}), ActionCreators)(App)
+```
+
+因此，也可以使用装饰器的写法。如下：  
+
+```js
+@connect(state => ({
+  // 需要引入订阅的数据
+}), ActionCreators)
+export default class App extends React.Component {
+    //...
+}
+```
+
+> 装饰器的发生阶段是在编译阶段，因此这里是`export default class App...`，多个装饰器是洋葱模型如`1->2->3->2->1`这种顺序来封装。
+
+`connect`的主要作用：  
+
+1. 帮助组件注册订阅redux state里的数据，`mapStateToProps`
+2. 向组件中注入`dispatch`方法用来提供更改redux state的接口，`mapDispatchToProps`
+
+也就是上面`connect`两个参数的含义。
+
+### redux-thunk
+### redux-actions
 
 ---
 参考文章：  
