@@ -35,4 +35,6 @@
   如下图所示：  
   ![react-tree-diff](https://github.com/shaoxi2093/blog/blob/master/assets/react-tree-diff.png?raw=true)
 2. `component diff`首先判断组件的类型，如上所说的三种类型，如果不同，则直接新加载，如果相同会继续对比这个组件是否前后相同。也就是说，如果A组件和D组件下都是有BC子组件结构，diff算法也是不认的，直接新加载
+   - 文本组件和
+   - 复合组件，判断组件的constructor
 3. `element diff`当有list类型，或者直接说使用同一组件生成的兄弟组件实例，react本身是无法进行简单判断前后是否一致，因此会继续遍历下去，这时候如果给所有兄弟组件都加上`key`，对框架而言就是能区分的了，提高了diff 效率
