@@ -189,11 +189,11 @@ function compose (middleware) {
       if (i <= index) return Promise.reject(new Error('next() called multiple times'))
       index = i
       let fn = middleware[i]
-      if (i === middleware.length) fn = next
-      if (!fn) return Promise.resolve()
+      if (i === middleware.length) fn = next // fn空
+      if (!fn) return Promise.resolve() // 直接结束
       try {
-        return Promise.resolve(fn(context, function next () {
-          return dispatch(i + 1)
+        return Promise.resolve(fn(context, function next () { // fn是async函数，返回promise，遇到promise.resolve(promise)直接返回这个promise
+          return dispatch(i + 1) // 当调用await next()时， await dispatch(下个组件)
         }))
       } catch (err) {
         return Promise.reject(err)
