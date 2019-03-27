@@ -1,6 +1,6 @@
 # ES6
-ES6相关内容，基本都是通过阮老师的《[ECMAScript 6 入门](http://es6.ruanyifeng.com/)》来学习的。    
-之后会按照以下段落分开总结自己的理解。
+ES6相关内容，基本都是通过阮老师的《[ECMAScript 6 入门](http://es6.ruanyifeng.com/)》来学习的。  
+之后会按照以下段落分开总结自己的理解，顺序和重要性、使用频率无关。
 
 1. let、const只读变量
 2. 箭头函数，自绑this
@@ -15,3 +15,4 @@ ES6相关内容，基本都是通过阮老师的《[ECMAScript 6 入门](http://
 11. module
 12. Iterator
 13. babel是啥
+14. promise
