@@ -65,6 +65,7 @@ function Server(requestListener) {
   this._pendingResponseData = 0;
   this.maxHeadersCount = null;
 }
+util.inherits(Server, net.Server);
 ```
 
 根据源码得到以下几点结论：  
@@ -123,4 +124,25 @@ function Server(options, connectionListener) {
   this.pauseOnConnect = !!options.pauseOnConnect;
 }
 util.inherits(Server, EventEmitter);
+```
+
+---
+补充： `util.inherits`源码，寄生继承prototype中的属性:  
+
+```js
+// node/lib/net.js:964
+function inherits(ctor, superCtor) {
+  if (ctor === undefined || ctor === null)
+    throw new TypeError('The constructor to "inherits" must not be ' +
+                        'null or undefined');
+  if (superCtor === undefined || superCtor === null)
+    throw new TypeError('The super constructor to "inherits" must not ' +
+                        'be null or undefined');
+  if (superCtor.prototype === undefined) {
+    throw new TypeError('The super constructor to "inherits" must ' +
+                        'have a prototype');
+  }
+  ctor.super_ = superCtor;
+  Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+}
 ```
