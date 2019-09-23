@@ -21,24 +21,56 @@
   canvas.height = 600;
   var ctx = canvas.getContext("2d");
   ctx.lineWidth = 10;
-  ctx.strokeStyle="black";
-  EvenCompEllipse(ctx, 130, 200, 100, 20); //椭圆
+  drawEllipseWithArcAndScale(ctx, 110, 250, 100, 30, 'orange'); //椭圆
 
-  function EvenCompEllipse(ctx, x, y, a, b){
-    ctx.save();
-    //选择a、b中的较大者作为arc方法的半径参数
-    var r = (a > b) ? a : b; 
-    var ratioX = a / r; //横轴缩放比率
-    var ratioY = b / r; //纵轴缩放比率
-    ctx.scale(ratioX, ratioY); //进行缩放（均匀压缩）
+  function drawEllipseWithArcAndScale(ctx, cx, cy, rx, ry, style) {
+    ctx.save(); // save state
     ctx.beginPath();
-    //从椭圆的左端点开始逆时针绘制
-    ctx.moveTo((x + a) / ratioX, y / ratioY);
-    ctx.arc(x / ratioX, y / ratioY, r, 0, 2 * Math.PI);
-    ctx.closePath();
+    ctx.translate(cx-rx, cy-ry);
+    ctx.scale(rx, ry);
+    ctx.arc(1, 1, 1, 0, 2 * Math.PI, false);
+    ctx.restore(); // restore to original state
+    ctx.save();
+    if(style)
+      ctx.strokeStyle=style;
     ctx.stroke();
     ctx.restore();
-  };
+  }
   ```
   这个方法其实是有问题的，1是无法准确的绘制指定的椭圆，2是scale压缩会把压缩地方的线绘制的更粗
 3. 使用Bezier曲线绘制
+  ```js
+  drawEllipseWithBezier(ctx, 10, 10, 200, 60, 'blue');
+  function drawEllipseWithBezier(ctx, x, y, w, h, style) {
+    var kappa = .5522848,
+        ox = (w / 2) * kappa,
+        oy = (h / 2) * kappa,
+        xe = x + w,
+        ye = y + h,
+        xm = x + w / 2,
+        ym = y + h / 2;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(x, ym);
+    ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
+    ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
+    ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+    ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
+    if(style)
+      ctx.strokeStyle=style;
+    ctx.stroke();
+    ctx.restore();
+  }
+  ```
+  或者另一种，根据中心点去绘制贝塞尔曲线。
+  ```js
+  drawEllipseWithBezierByCenter(ctx, 110, 110, 200, 60, '#0099ff');
+  function drawEllipseWithBezierByCenter(ctx, cx, cy, w, h, style) {
+    drawEllipseWithBezier(ctx, cx - w/2.0, cy - h/2.0, w, h, style);
+  }
+  ```
+
+---
+参考文档：
+[绘制椭圆代码jsbin](http://jsbin.com/ovuret/722/edit?html,output)
