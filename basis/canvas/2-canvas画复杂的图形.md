@@ -63,6 +63,7 @@
     ctx.restore();
   }
   ```
+
   或者另一种，根据中心点去绘制贝塞尔曲线。
   ```js
   drawEllipseWithBezierByCenter(ctx, 110, 110, 200, 60, '#0099ff');
@@ -70,6 +71,8 @@
     drawEllipseWithBezier(ctx, cx - w/2.0, cy - h/2.0, w, h, style);
   }
   ```
+4. 使用`ctx.quadraticCurveTo()`
+  > 补充写法：开始点：moveTo(`20,20`) 控制点：quadraticCurveTo(`20,100`,200,20) 结束点：quadraticCurveTo(20,100,`200,20`)
 
 ---
 参考文档：
