@@ -72,8 +72,16 @@
   }
   ```
 4. 使用`ctx.quadraticCurveTo()`
-  > 补充写法：开始点：moveTo(`20,20`) 控制点：quadraticCurveTo(`20,100`,200,20) 结束点：quadraticCurveTo(20,100,`200,20`)
+  > 补充`quadraticCurveTo`写法：开始点：moveTo(`20,20`) 控制点：quadraticCurveTo(`20,100`,200,20) 结束点：quadraticCurveTo(20,100,`200,20`)
 
 ---
 参考文档：
 [绘制椭圆代码jsbin](http://jsbin.com/ovuret/722/edit?html,output)
+
+## 多边形
+
+多边形，其实都只是直线的连接。只要计算好每个点的坐标，就能够绘制出来。
+
+## 其他
+
+如❤️形等。使用贝塞尔曲线绘制吧。
