@@ -16,3 +16,78 @@ ctx.translate(100, 100) //此时的xy位置都是基于200， 200的xy值
 恢复的方法有两种：
 1. 使用负偏移，还原到原点，之前平移了多少，这次就返回多少
 2. 使用`ctx.save()`,`ctx.restore()`方法来还原
+
+```js
+var canvas = document.getElementById("my-canvas")
+var ctx = canvas.getContext("2d")
+
+ctx.save()
+ctx.fillStyle = "#f00"
+ctx.translate(100,100)
+ctx.fillRect(100,100,200,100)
+ctx.restore() //还原之前保存的坐标原点
+
+ctx.save()
+ctx.fillStyle = "#ddd"
+ctx.translate(200,200)
+ctx.fillRect(100,100,200,100)
+ctx.restore()
+```
+
+## 旋转
+旋转`rotate(deg)`参数是弧度，和`arc()`里的最后两个参数一样。从纵轴即y轴向上顺时针旋转，注意的是这里的旋转中心点是原点，即坐标（0, 0）。如果想要在你希望的地方作为旋转中心的话，要结合上面说的平移`translate()`平移原点，然后旋转。同时要注意的是，这里也有上面平移同样的⚠️注意点，原点平移后，记得还原。
+> deg = 2 * Math.PI / 360 * 角度，之前也有说过，2π就是360度。
+
+如下，写一个简单的旋转动画。
+```js
+var canvas = document.getElementById("my-canvas")
+var ctx = canvas.getContext("2d")
+
+ctx.save()
+ctx.fillStyle = "#f00"
+ctx.translate(100,100)
+ctx.fillRect(100,100,100,100)
+ctx.restore()
+
+ctx.save()
+ctx.translate(150, 150)
+ctx.rotate(0.5 * Math.PI)
+ctx.restore()
+
+ctx.save()
+ctx.fillStyle = "#ddd"
+ctx.translate(300,100)
+ctx.fillRect(100,200,200,100)
+ctx.restore()
+
+var ani = setInterval((function(){
+  var deg = 0
+  return function() {
+    if(deg < Math.PI){
+      ctx.save()
+      ctx.translate(500, 350)
+      ctx.clearRect(-200, -200, 400, 400)
+      ctx.rotate(deg)
+      ctx.fillStyle = "#ddd"
+      ctx.fillRect(-100,-50,200,100)
+      deg += 2 * Math.PI / 360 * 5
+      ctx.restore()
+    } else {
+      ani && clearInterval(ani)
+    }
+  }
+})(), 20)
+```
+
+## 缩放
+缩放变换`scale(scalewidth,scaleheight)`，其中scalewidth、scaleheight分别是【缩放当前绘图的宽度】 和 【缩放当前绘图的高度】的倍数值。
+第一次使用起来，觉得有点奇怪。对绘图进行缩放，1. 所有之后的绘图也会被缩放 2.定位也会被缩放 3. 感觉线的粗细这些值也被缩放了
+
+```js
+var canvas=document.getElementById("my-canvas")
+var ctx=canvas.getContext("2d")
+
+ctx.strokeRect(5,5,25,15)
+ctx.scale(2,2)
+ctx.strokeRect(5,5,25,15)
+```
