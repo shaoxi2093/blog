@@ -91,3 +91,23 @@ ctx.strokeRect(5,5,25,15)
 ctx.scale(2,2)
 ctx.strokeRect(5,5,25,15)
 ```
+
+## transform
+写css动画效果时，经常会用到这个`transform: translate/rotate/scale...`，学习canvas时，会发现都是相似的。canvas也提供了一个`transform`方法。
+
+```js
+/**
+ * @param a 水平缩放绘图
+ * @param b 水平倾斜绘图
+ * @param c 垂直倾斜绘图
+ * @param d 垂直缩放绘图
+ * @param e 水平移动绘图
+ * @param f 垂直移动绘图
+ * 
+ */
+ctx.transform(a,b,c,d,e,f)
+```
+
+就api来看的话，translate平移对应的参数应该是`e和f`，rotate对应的是`b和c`，scale对应的是`a和d`。且注意，`transform`也会基于之前变换后绘图的基础上来进行变换的。
+
+同时，canvas还提供了另一个方法，`setTransform()`它时不会基于之前绘图2d变换的基础上变换的
