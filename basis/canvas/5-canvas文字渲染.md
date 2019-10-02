@@ -23,11 +23,19 @@ e | font-family | 规定字体系列
 
 可以通过`@font-family`加载字体来使用。
 
-### 文字对齐
+## 文字对齐
 
 canvas的文字对齐配置有垂直和水平对齐配置。  
 
 1. 水平对齐，```ctx.textAlign="center|end|left|right|start"```
 2. 垂直对齐，```ctx.textBaseline="alphabetic|top|hanging|middle|ideographic|bottom"```
+
+## 文字阴影
+
+canvas的阴影shadow不仅仅是对文字有效的，对其他也有效。
+- `ctx.shadowColor`，配置阴影颜色
+- `ctx.shadowOffsetX`，阴影x轴位移。正值向右，负值向左
+- `ctx.shadowOffsetY`，阴影y轴位移。正值向下，负值向上
+- `ctx.shadowBlur`，阴影模糊滤镜
 
 
