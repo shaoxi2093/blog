@@ -84,4 +84,13 @@
 
 ## 其他
 
-如❤️形等。使用贝塞尔曲线绘制吧。
+如❤️形等。使用贝塞尔曲线绘制吧。  
+![其他图形](https://github.com/shaoxi2093/blog/blob/master/assets/canvas-other-shapes.png?raw=true)
+
+```js
+ctx.beginPath()
+ctx.moveTo(280, 140)
+ctx.bezierCurveTo(260, 120, 260, 150, 280, 170)
+ctx.bezierCurveTo(300, 150, 300, 120, 280, 140)
+ctx.stroke()
+```
