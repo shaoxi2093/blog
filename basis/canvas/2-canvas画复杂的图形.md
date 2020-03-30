@@ -13,9 +13,12 @@
 ## 椭圆
 
 椭圆的画法，有几种：
+
 1. canvas自带的方法`ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise)`绘制
+
 2. 利用`arc()`方法画圆，然后用`scale`，以下贴一段demo代码
-  ```js
+  
+  ```js  
   var canvas = document.getElementById("canvas");
   canvas.width = 600;
   canvas.height = 600;
@@ -37,9 +40,12 @@
     ctx.restore();
   }
   ```
+
   这个方法其实是有问题的，1是无法准确的绘制指定的椭圆，2是scale压缩会把压缩地方的线绘制的更粗
+
 3. 使用Bezier曲线绘制
-  ```js
+
+  ```js  
   drawEllipseWithBezier(ctx, 10, 10, 200, 60, 'blue');
   function drawEllipseWithBezier(ctx, x, y, w, h, style) {
     var kappa = .5522848,
@@ -65,13 +71,16 @@
   ```
 
   或者另一种，根据中心点去绘制贝塞尔曲线。
-  ```js
+
+  ```js  
   drawEllipseWithBezierByCenter(ctx, 110, 110, 200, 60, '#0099ff');
   function drawEllipseWithBezierByCenter(ctx, cx, cy, w, h, style) {
     drawEllipseWithBezier(ctx, cx - w/2.0, cy - h/2.0, w, h, style);
   }
   ```
+
 4. 使用`ctx.quadraticCurveTo()`
+
   > 补充`quadraticCurveTo`写法：开始点：moveTo(`20,20`) 控制点：quadraticCurveTo(`20,100`,200,20) 结束点：quadraticCurveTo(20,100,`200,20`)
 
 ---
