@@ -60,3 +60,16 @@ body {
 <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
 <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
 ```
+
+## IE上遇到层叠错位的情况
+描述： IE上出现底层的内容出现在上层，把上层覆盖的问题出现。fixed的上层元素`z-index`设置再大也没用。  
+原因：
+1. 对于包含有position:relative/position:absolute的定位元素，以及FireFox/IE浏览器（不包括Chrome等webkit内核浏览器）下含有position:fixed声明的定位元素，当其z-index值不是auto的时候，会创建层叠上下文。
+2. IE会对下层position不为static的节点，自动添加一个z-index的默认值
+3. IE上，对整体包括fixed的节点进行层叠上下文的判断
+
+解决：  
+找到当前fixed的节点的祖先节点与问题的底层祖先节点是兄弟节点的地方，即层叠上下文发生比较的地方，然后适当调整。
+
+## IE上遇到的层叠错位的情况2
+描述： IE上出现，底层采用`overflow: auto | scroll`时，底层穿透，覆盖在了具有`z-index`的节点上方。

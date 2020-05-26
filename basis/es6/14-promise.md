@@ -51,6 +51,10 @@
     }
     ```
 
+  - `resolve`传递当前promise的返回值，到`then`方法中，并改变当前promise状态+传递value到下个then
+  - `reject`传递当前promise失败的原因，到`catch`方法中，因此需要改变状态+传递reason到catch
+  
+
 3. 修改resolve、reject方法获取this
 
     ```js
@@ -105,4 +109,10 @@
     })
     ```
 
-4. `TODO` 第二个then方法应该执行，value2应该是前一个then方法返回的值，目前做的是覆盖方案
+4. `TODO` 第二个then方法应该执行，value2应该是前一个then方法返回的值，目前做的是覆盖方案。因此，`this.thenCb`应该是个数组，逐个执行，并且支持链式注册，因此`PromiseA.prototype.then`应该返回的也是个`PromiseA`
+
+    ```js
+    PromiseA.prototype.then = function(fn) {
+      return 
+    }
+    ```
